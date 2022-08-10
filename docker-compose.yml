@@ -22,6 +22,7 @@ services:
       # Monta o diretório atual, com todos os dados do projeto, 
       # dentro do diretório /app
       - ./:/app
+    platform: linux/amd64
 
 # Lista de redes que os containeres irão utilizar
 networks:
