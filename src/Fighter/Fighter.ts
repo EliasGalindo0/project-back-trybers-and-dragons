@@ -13,11 +13,12 @@ interface Fighter {
   lifePoints: number;
   strength: number;
   defense: number;
-  energy: Energy;
-  levelUp(): void;
-  special(enemy: Fighter): void;
+  energy?: Energy;
+
   attack(enemy: Fighter): void;
-  receiveDamage(amount: number): void;
+  special(enemy: Fighter): void;
+  levelUp(): void;
+  receiveDamage(attackPoints: number): number
 }
 
 export default Fighter;
