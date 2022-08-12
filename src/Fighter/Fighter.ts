@@ -8,10 +8,9 @@
 // receiveDamage(), que recebe um attackPoints do tipo number como parâmetro e retorne um number
 
 import Energy from '../Energy';
+import SimpleFighter from './SimpleFighter';
 
-interface Fighter {
-  lifePoints: number;
-  strength: number;
+interface Fighter extends SimpleFighter {
   defense: number;
   energy?: Energy;
 
