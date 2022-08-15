@@ -12,7 +12,7 @@
 
 import Archetype, { Mage } from './Archetypes';
 import Energy from './Energy';
-import Fighter from './Fighter';
+import Fighter, { SimpleFighter } from './Fighter';
 import Race, { Elf } from './Races';
 import getRandomInt from './utils';
 
@@ -94,7 +94,7 @@ export default class Character implements Fighter {
   // attack 🪄 este método recebe por parâmetro uma pessoa inimiga (enemy) e as regras são:
   // Toda vez que acontecer um ataque, o inimigo recebido por parâmetro recebe um dano;
   // Este dano deve ser equivalente a força (strength) de quem ataca.
-  attack(enemy: Fighter): void {
+  attack(enemy: SimpleFighter): void {
     enemy.receiveDamage(this.strength);
   }
 
@@ -118,12 +118,12 @@ export default class Character implements Fighter {
 
   //   special ⚡ este método não recebe parâmetro e as regras é você quem decide:
   // Aqui você pode expandir sua mente e realizar a lógica que achar mais interessante para um ataque especial, use tudo que aprendeu no mundo de T&D!
-  special(): void | number {
+  special(enemy: SimpleFighter): void | number {
     const special = this._strength + getRandomInt(10, 50);
     
     if (special === 10) {
       console.log('Better luck on the next time, your special didn`t hurt me!');
     }
-    return special;
+    enemy.receiveDamage(special);
   }
 }

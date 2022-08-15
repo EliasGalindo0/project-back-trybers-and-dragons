@@ -14,8 +14,7 @@ interface Fighter extends SimpleFighter {
   defense: number;
   energy?: Energy;
 
-  attack(enemy: Fighter): void;
-  special(enemy: Fighter): void;
+  special(enemy: SimpleFighter): void;
   levelUp(): void;
   receiveDamage(attackPoints: number): number
 }
