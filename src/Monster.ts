@@ -1,7 +1,7 @@
 import { SimpleFighter } from './Fighter';
 
-export default class Monsters implements SimpleFighter {
-  private _lifePoints: number;
+export default class Monster implements SimpleFighter {
+  protected _lifePoints: number;
   private _strength: number;
   
   constructor() {
