@@ -10,9 +10,6 @@ const player3 = new Character('player3');
 player1.levelUp();
 player1.levelUp();
 player1.levelUp();
-player1.levelUp();
-player1.levelUp();
-player1.levelUp();
 
 const monster1 = new Monster();
 const monster2 = new Dragon();

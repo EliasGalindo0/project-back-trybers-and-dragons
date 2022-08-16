@@ -6,22 +6,13 @@ export default class PVE extends Battle {
     super(_player);
   }
 
-  private battles(enemy: SimpleFighter): void {
-    if (this._player.lifePoints !== -1) {
-      this._player.attack(enemy);
-    }
-    if (enemy.lifePoints !== -1) {
-      enemy.attack(this._player);
-    }
-  }
-
   fight(): number {
     this._monster.forEach((enemy) => {
       while (this._player.lifePoints > 0 && enemy.lifePoints > 0) {
-        this.battles(enemy);
+        this._player.attack(enemy);
+        enemy.attack(this._player);
       }
     });
-    const result = super.fight();
-    return result;
+    return super.fight();
   }
 }
